@@ -1,0 +1,17 @@
+/*
+ * pro.cpp
+ *
+ *  Created on: 15-Oct-2024
+ *      Author: root
+ */
+
+
+
+
+#include <iodtream>
+using namespace std;
+
+int main()
+{
+	return 0;
+}

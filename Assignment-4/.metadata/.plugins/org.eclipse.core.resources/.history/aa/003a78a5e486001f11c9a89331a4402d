@@ -1,0 +1,31 @@
+/*
+ * q2.cpp
+ *
+ *  Created on: 10-Oct-2024
+ *      Author: root
+ */
+
+//Design a baseclass Patient and IPD(ward_no,bed_no,charge_per_day).Derive a class
+//IPD-Patient from these two base classes with no_of_days admitted.
+
+#include <iostream>
+using namespace std;
+
+class Patient
+{
+
+};
+
+class IPD
+{
+
+};
+
+class IPD_Patient : public Paitent, public IPD
+{
+
+}
+int main()
+{
+	return 0;
+}

@@ -1,0 +1,15 @@
+13:39:01 **** Incremental Build of configuration Debug for project Temprature C2F ****
+make all 
+Building file: ../c2f.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"c2f.d" -MT"c2f.o" -o "c2f.o" "../c2f.cpp"
+Finished building: ../c2f.cpp
+ 
+Building target: Temprature C2F
+Invoking: GCC C++ Linker
+g++  -o "Temprature C2F"  ./c2f.o   
+Finished building target: Temprature C2F
+ 
+
+13:39:01 Build Finished. 0 errors, 0 warnings. (took 366ms)
+

@@ -1,0 +1,62 @@
+/*
+ * q5.c
+ *
+ *  Created on: 07-Oct-2024
+ *      Author: root
+ */
+
+
+#include<iostream>
+using namespace std;
+
+class Binary
+{
+	float x,y;
+	public:
+
+	void input()
+	{
+		cout<<"Enter first number:";
+		cin>>x;
+		cout<<"Enter second number:";
+		cin>>y;
+	}
+
+	void operator +()
+	{
+		cout<<"\nAddition of two number:"<<(x+y)<<endl;
+	}
+
+	void operator -()
+	{
+		cout<<"\nSubtraction of two number:"<<(x-y)<<endl;
+	}
+
+	void operator *()
+	{
+		cout<<"\nMultiplication of two number:"<<(x*y)<<endl;
+	}
+
+	void operator /(Binary a)
+	{
+		if(a.y==0)
+		{
+			cout<<"\nDivision is Not possible";
+		}
+		else
+		{
+			cout<<"\nDivision of two number:"<<(a.x/a.y)<<endl;
+		}
+	}
+};
+int main()
+{
+	Binary Obj;
+	Obj.input();
+	+Obj;
+	-Obj;
+	*Obj;
+	Obj/Obj;
+
+	return 0;
+}

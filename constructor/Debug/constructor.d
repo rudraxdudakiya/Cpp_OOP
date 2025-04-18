@@ -1,0 +1,1 @@
+constructor.o: ../constructor.cpp

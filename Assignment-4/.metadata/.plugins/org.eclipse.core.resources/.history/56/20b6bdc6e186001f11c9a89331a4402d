@@ -1,0 +1,73 @@
+/*
+ * q1.cpp
+ *
+ *  Created on: 10-Oct-2024
+ *      Author: root
+ */
+
+
+//Design a class called "Vehicle" which contains appropriate datamembers.
+//Design a class "two-Wheeler" from vehicle which contains data member’s distance and mileage.
+//Use overloading techniques.
+//Assume further classes for inheritance and demonstrate the use of Multi-level inheritance for the above problem.
+
+#include <iostream>
+using namespace std;
+
+class Vehicle
+{
+protected:
+	int resistration_no, plate_no, model_year;
+	string Model_name, brand_name, color;
+};
+
+class Two_Wheeler : public Vehicle
+{
+	float distance;
+	int mileage;
+public :
+	void Input()
+	{
+		cout << "\n\nEnter the registration no. : ";
+		cin >> resistration_no;
+
+		cout << "Enter the plate no. : ";
+		cin >> plate_no;
+
+		cout << "Enter the name of model : ";
+		cin >> Model_name;
+
+		cout << "Enter the name of brand : ";
+		cin >> brand_name;
+
+		cout << "Enter the name of color : ";
+		cin >> color;
+
+		cout << "Enter the year of model : ";
+		cin >> model_year;
+
+		cout << "Enter the distance that traversed : ";
+		cin >> distance;
+
+		cout << "Enter the mileage : ";
+		cin >> mileage;
+	}
+
+	void Display()
+	{
+		cout << "\n\n\t\t>> Two-Wheeler <<\n\nResi_no\tPlate_no\tModel_year\tDistance\tMilage(per hour)\n\n";
+		cout << resistration_no << "\t" << plate_no << "\t\t" << model_year << "\t\t" << distance << "\t\t" << mileage << endl;
+	}
+};
+
+
+
+int main()
+{
+	Two_Wheeler vehicle;
+
+	vehicle.Input();
+	vehicle.Display();
+
+	return 0;
+}

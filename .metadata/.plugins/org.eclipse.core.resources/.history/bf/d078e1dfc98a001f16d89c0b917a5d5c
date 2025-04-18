@@ -1,0 +1,49 @@
+/*
+ * pro.cpp
+ *
+ *  Created on: 15-Oct-2024
+ *      Author: root
+ */
+
+
+
+
+#include <iostream>
+using namespace std;
+
+class student
+{
+	string name;
+public:
+	student()
+	{
+		cout << "--- Default Constructor of Student class ---";
+		name = " ";
+	}
+	student(string name)
+	{
+
+	}
+};
+
+class school : public student
+{
+	int rno,m1,m2,m3,total;
+	float per;
+public:
+	school()
+	{
+		cout << "--- Default Constructor of school class ---";
+		rno = m1 = m2 = m3 = total = per = 0;
+		name = "";
+	}
+	student(int rno, int m1, int m2, int m3, int total, float per, string name) : student(name)
+	{
+		this->rno = rno;
+	}
+};
+
+int main()
+{
+	return 0;
+}

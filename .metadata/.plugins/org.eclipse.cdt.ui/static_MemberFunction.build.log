@@ -1,0 +1,6 @@
+14:54:07 **** Incremental Build of configuration Debug for project static_MemberFunction ****
+make all 
+make: Nothing to be done for 'all'.
+
+14:54:07 Build Finished. 0 errors, 0 warnings. (took 167ms)
+

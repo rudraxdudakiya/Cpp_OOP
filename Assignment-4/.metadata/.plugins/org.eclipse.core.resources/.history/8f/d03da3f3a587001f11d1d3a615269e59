@@ -1,0 +1,86 @@
+/*
+ * q2.cpp
+ *
+ *  Created on: 10-Oct-2024
+ *      Author: root
+ */
+
+//Design a baseclass Patient and IPD(ward_no,bed_no,charge_per_day).Derive a class
+//IPD-Patient from these two base classes with no_of_days admitted.
+
+#include <iostream>
+using namespace std;
+
+class Patient
+{
+protected:
+	int p_id;
+	string name;
+	int age;
+};
+
+class IPD
+{
+protected:
+	int ward_no, bed_no;
+	float CPD;
+};
+
+class IPD_Patient : public Patient, public IPD
+{
+	int dd,mm,yy;
+	int calculated_day=0,calculated_month=0,calculated_year=0;
+public:
+	void input()
+	{
+		cout << "\n\nEnter patient id : ";
+		cin >> p_id;
+		cout << "Enter the name of patient : ";
+		cin >> name;
+		cout << "Enter the age of patient : ";
+		cin >> age;
+
+		cout << "\n\nEnter the ward no : ";
+		cin >> ward_no;
+		cout << "\n\nEnter the bed no : ";
+		cin >> bed_no;
+		cout << "Enter the Charges per day : ";
+		cin >> CPD;
+
+		cout << "Enter the admit date (dd-mm-yy) : ";
+		cin >> dd >> mm >> yy;
+	}
+	void dateDiff()
+	{
+		int d,m,y;
+		cout<<"\nEnter the new date : \nDay :";
+		cin>>d;
+		cout<<"\nMonth :";
+		cin>>m;
+		cout<<"\nYear :";
+		cin>>y;
+		int month[12]={31,28,31,30,31,30,31,31,30,31,30,31};
+			if(y%4==0)
+				month[1]=29;
+			if(dd > d)
+			{
+				int i=month[mm-1];
+				d=d+i;
+				m=m-1;
+			}
+			if(mm > m)
+			{
+				y=y-1;
+				m=m+12;
+			}
+			calculated_day=d-dd;
+			calculated_month=m-mm;
+			calculated_year=y-yy;
+
+			cout<<"year : " <<calculated_year<<" month : "<<calculated_month<<" day :"<<calculated_day;
+	}
+};
+int main()
+{
+	return 0;
+}

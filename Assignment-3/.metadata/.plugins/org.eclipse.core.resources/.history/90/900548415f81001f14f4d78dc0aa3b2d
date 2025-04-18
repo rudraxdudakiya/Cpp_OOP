@@ -1,0 +1,20 @@
+/*
+ * q2.cpp
+ *
+ *  Created on: 03-Oct-2024
+ *      Author: root
+ */
+
+
+#include <iostream>
+using namespace std;
+
+class Time
+{
+	int Hour, Minute, Second;
+};
+int main()
+{
+	return 0;
+}
+

@@ -1,0 +1,30 @@
+/*
+ * q6.cpp
+ *
+ *  Created on: 02-Sep-2024
+ *      Author: root
+ */
+
+
+
+
+#include <iostream>
+#include <iomanip> // For manipulators like std::fixed, std::setprecision
+
+int main() {
+    double number = 123.456789;
+
+    // Default format
+    std::cout << "Default format: " << number << std::endl;
+
+    // Fixed-point notation with 2 decimal places
+    std::cout << std::fixed << std::setprecision(2);
+    std::cout << "Fixed-point notation (2 decimal places): " << number << std::endl;
+
+    // Scientific notation with 4 decimal places
+    std::cout << std::scientific << std::setprecision(4);
+    std::cout << "Scientific notation (4 decimal places): " << number << std::endl;
+
+    // Reset to default format
+    std::cout.unsetf(std::ios::fixed);
+

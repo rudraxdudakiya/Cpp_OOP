@@ -1,0 +1,15 @@
+14:37:03 **** Incremental Build of configuration Debug for project string merge ****
+make all 
+Building file: ../strcat.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"strcat.d" -MT"strcat.o" -o "strcat.o" "../strcat.cpp"
+Finished building: ../strcat.cpp
+ 
+Building target: string merge
+Invoking: GCC C++ Linker
+g++  -o "string merge"  ./strcat.o   
+Finished building target: string merge
+ 
+
+14:37:03 Build Finished. 0 errors, 0 warnings. (took 423ms)
+

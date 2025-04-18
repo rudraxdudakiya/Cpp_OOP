@@ -1,0 +1,133 @@
+/*
+ * pro.cpp
+ *
+ *  Created on: 15-Oct-2024
+ *      Author: root
+ */
+
+
+
+
+#include <iostream>
+using namespace std;
+
+class student
+{
+	string name, gender;
+	int age, bd,bm,by;
+public:
+	student()
+	{
+		cout << "--- Default Constructor of Student class ---";
+		name = " ";
+		age = bd = bm = by = 0;
+	}
+	student(string name, string gender, int age, int bd, int bm, int by)
+	{
+		this->name = name;
+		this->gender = gender;
+		this->age = age;
+		this->bd = bd;
+		this->bm = bm;
+		this->by = by;
+	}
+	student(student &a)
+	{
+		name = a.name;
+		gender = a.gender;
+		age = a.age;
+		bd = a.bd;
+		bm = a.bm;
+		by = a.by;
+	}
+
+	void displayStud()
+	{
+		cout << "\n\nName       : " << name << endl;
+		cout << "Gender     : " << gender << endl;
+		cout << "Age        : " << age << endl;
+		cout << "Birth Date : " << bd << "/" << bm << "/" << by << endl << endl;
+	}
+};
+
+class markSheet
+{
+	int rno,m1,m2,m3,total;
+	float per;
+	char div;
+public:
+	markSheet()
+	{
+		cout << "--- Default Constructor of markSheet class ---";
+		rno = m1 = m2 = m3 = total = per = 0;
+		div = ' ';
+	}
+	markSheet(int rno, int m1, int m2, int m3, int total, char div)
+	{
+		this->rno = rno;
+		this->m1 = m1;
+		this->m2 = m2;
+		this->m3 = m3;
+		this->total = total;
+		this->div = div;
+		per = (float) m1+m2+m3/3;
+	}
+	markSheet(markSheet &a)
+	{
+		rno = a.rno;
+		m1 = a.m1;
+		m2 = a.m2;
+		m3 = a.m3;
+		total = a.total;
+		div = a.div;
+		per = (float) (a.m1+a.m2+a.m3)/3;
+	}
+	void displayMarks()
+	{
+		cout << "Roll No.        : " << rno << endl;
+		cout << "Division        : " << div << endl;
+		cout << "Marks of Sub 1  : " << m1 << endl;
+		cout << "Marks of Sub 2  : " << m2 << endl;
+		cout << "Marks of Sub 3  : " << m3 << endl;
+		cout << "Percentage      : " << per << endl << endl;;
+	}
+};
+
+class school : public student, public markSheet
+{
+	int std;
+	string sName;
+public:
+	school()
+	{
+		cout << "--- Default Constructor of school class ---";
+		std = 0;
+		sName = " ";
+	}
+	school(int std, string sName, string name, string gender, int age, int bd, int bm, int by, int rno, int m1, int m2, int m3, int total, char div)
+	: student(name, gender, age, bd, bm, by), markSheet(rno, m1,m2,m3, total, div)
+	{
+		this->std = std;
+		this->sName= sName;
+	}
+	school(school &a, markSheet &m, student &s) : student(s), markSheet(m)
+	{
+		std = a.std;
+		sName = a.sName;
+	}
+
+	void displaySchool()
+	{
+		student :: displayStud();
+		markSheet :: displayMarks();
+		cout << "School Name  : " << sName << endl;
+		cout << "Std          : " << std << endl << endl;
+	}
+};
+
+int main()
+{
+	school s1;
+	s1.displaySchool();
+	return 0;
+}

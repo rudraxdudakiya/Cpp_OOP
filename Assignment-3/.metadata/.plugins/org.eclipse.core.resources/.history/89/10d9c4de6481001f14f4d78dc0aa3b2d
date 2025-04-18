@@ -1,0 +1,40 @@
+/*
+ * q2.cpp
+ *
+ *  Created on: 03-Oct-2024
+ *      Author: root
+ */
+
+
+#include <iostream>
+using namespace std;
+
+class Time
+{
+	int Hour, Minute, Second;
+public:
+	&istream operator>>()
+	{
+		istream input;
+		cout<<"Enter Hour : ";
+		input>>Hour;
+		cout<<"Enter Minutes : ";
+		inut>>Minute;
+		cout<<"Enter Second : ";
+		input>>Second;
+		return input;
+	}
+
+	void operator<<()
+	{
+		cout<<"\n"<<Hour<<":"<< Minute<<":"<< Second;
+	}
+};
+int main()
+{
+	Time a;
+	cin>>a;
+
+	return 0;
+}
+

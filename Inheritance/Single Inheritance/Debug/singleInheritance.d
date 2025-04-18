@@ -1,0 +1,1 @@
+singleInheritance.o: ../singleInheritance.cpp

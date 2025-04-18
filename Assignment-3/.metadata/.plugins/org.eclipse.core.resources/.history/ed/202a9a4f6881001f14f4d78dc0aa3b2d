@@ -1,0 +1,92 @@
+/*
+ * q2.cpp
+ *
+ *  Created on: 03-Oct-2024
+ *      Author: root
+ */
+
+
+
+#include <iostream>
+using namespace std;
+
+class Time
+{
+    int Hour, Minute, Second;
+public:
+    friend istream& operator>>(istream &in, Time &t)
+    {
+    	int flag;
+    	do{
+        	flag=0;
+        	cout << "Enter Hour: ";
+        	in >> t.Hour;
+        	if(t.Hour >=0 && t.Hour<=24)
+        		flag = 1;
+        	else
+        		cout<<"Enter again hour is invalid\n";
+    	} while(!flag);
+
+    	do{
+    		flag=0;
+            cout << "Enter Minutes: ";
+            in >> t.Minute;
+
+        	if(t.Minute >=0 && t.Minute<=59)
+        		flag = 1;
+        	else
+        		cout<<"Enter again minutes is invalid\n";
+    	} while(!flag);
+
+        do{
+        	flag=0;
+        	cout << "Enter Seconds: ";
+        	in >> t.Second;
+
+        	if(t.Second >=0 && t.Second<=59)
+        		flag = 1;
+        	else
+        		cout<<"Enter again seconds is invalid\n";
+    	} while(!flag);
+        return in;
+    }
+
+    friend ostream& operator<<(ostream &out, Time t)
+    {
+        out << t.Hour << ":" << t.Minute << ":" << t.Second;
+        return out;
+    }
+
+    friend bool operator==(Time a, Time b)
+	{
+    	if(a.Hour==b.Hour && a.Minute==b.Minute && a.Second==b.Second)
+    		return true;
+    	return false;
+	}
+};
+
+int main()
+{
+    Time a,b;
+
+    cout << "Enter time of object a :\n\n";
+    cin >> a;
+    cout << endl;
+    cout << a;
+
+    cout << "\n\nEnter time of object b :\n\n";
+    cin >> b;
+    cout << endl;
+    cout << b;
+
+    if(a==b)
+    {
+    	cout << "\nboth time is same\n";
+    }
+    else
+    {
+    	cout << "\nboth time is different\n";
+    }
+    return 0;
+}
+

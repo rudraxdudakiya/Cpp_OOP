@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;manipulator/iomanip.c&apos; to &apos;iomanip.cpp&apos;" description="Rename resource &apos;iomanip.c&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="iomanip.c" name="iomanip.cpp" stamp="1720773633107" updateReferences="true"/>
+</session>

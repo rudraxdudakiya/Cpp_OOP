@@ -1,0 +1,15 @@
+14:11:08 **** Incremental Build of configuration Debug for project sum ****
+make all 
+Building file: ../sum.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"sum.d" -MT"sum.o" -o "sum.o" "../sum.cpp"
+Finished building: ../sum.cpp
+ 
+Building target: sum
+Invoking: GCC C++ Linker
+g++  -o "sum"  ./sum.o   
+Finished building target: sum
+ 
+
+14:11:09 Build Finished. 0 errors, 0 warnings. (took 471ms)
+

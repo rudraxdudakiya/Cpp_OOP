@@ -1,0 +1,55 @@
+/*
+ * q3.cpp
+ *
+ *  Created on: 03-Oct-2024
+ *      Author: root
+ */
+
+
+
+
+#include <iostream>
+using namespace std;
+
+class word
+{
+	string s;
+public:
+	void get_input()
+	{
+		cout<<"Enter the word : ";
+		cin>>s;
+	}
+	void show()
+	{
+		cout<<s<<endl;
+	}
+	void operator!()
+	{
+		int i=0;
+		while(s[i] != '\0')
+		{
+			if(s[i]>='a' && s[i]<='z')
+			{
+				s[i]-=32;
+			}
+			else if(s[i]>='A' && s[i]<='Z')
+			{
+				s[i]+=32;
+			}
+			i++;
+		}
+	}
+};
+
+int main()
+{
+	word a;
+	a.get_input();
+	a.show();
+
+	!a;
+
+	a.show();
+	return 0;
+}

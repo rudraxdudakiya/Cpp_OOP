@@ -1,0 +1,59 @@
+/*
+ * q2.cpp
+ *
+ *  Created on: 03-Oct-2024
+ *      Author: root
+ */
+
+
+
+#include <iostream>
+using namespace std;
+
+class Time
+{
+    int Hour, Minute, Second;
+public:
+    friend istream& operator>>(istream &in, Time &t)
+    {
+    	int flag;
+    	do{
+        	flag=0;
+        	cout << "Enter Hour: ";
+        	in >> t.Hour;
+        	if(t.Hour >=0 && t.Hour<=59)
+        		flag = 1;
+        	else
+        		cout<<"Enter again time is invalid\n";
+    	} while(flag);
+
+    	do{
+        	int flag=0;
+            cout << "Enter Minutes: ";
+            in >> t.Minute;
+    	} while(t.Minute >=0 && t.Minute<=59);
+
+        do{
+        	int flag=0;
+        	cout << "Enter Seconds: ";
+        	in >> t.Second;
+    	} while(t.Second >=0 && t.Second<=59);
+        return in;
+    }
+
+    friend ostream& operator<<(ostream &out, Time &t)
+    {
+        out << t.Hour << ":" << t.Minute << ":" << t.Second;
+        return out;
+    }
+};
+
+int main()
+{
+    Time a;
+    cin >> a;
+    cout << a;
+
+    return 0;
+}
+

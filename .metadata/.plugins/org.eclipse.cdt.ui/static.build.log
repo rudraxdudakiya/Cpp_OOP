@@ -1,0 +1,28 @@
+14:40:46 **** Incremental Build of configuration Debug for project static ****
+make all 
+Building file: ../variableInFun.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"variableInFun.d" -MT"variableInFun.o" -o "variableInFun.o" "../variableInFun.cpp"
+Finished building: ../variableInFun.cpp
+ 
+Building file: ../variablesInClass.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"variablesInClass.d" -MT"variablesInClass.o" -o "variablesInClass.o" "../variablesInClass.cpp"
+Finished building: ../variablesInClass.cpp
+ 
+Building target: static
+Invoking: GCC C++ Linker
+g++  -o "static"  ./variableInFun.o ./variablesInClass.o   
+/usr/bin/ld: ./variablesInClass.o: in function `main':
+/root/sem3_1045/OOP/static/Debug/../variablesInClass.cpp:27: multiple definition of `main'; ./variableInFun.o:/root/sem3_1045/OOP/static/Debug/../variableInFun.cpp:31: first defined here
+/usr/bin/ld: ./variablesInClass.o: in function `main':
+/root/sem3_1045/OOP/static/Debug/../variablesInClass.cpp:30: undefined reference to `GfG::i'
+/usr/bin/ld: /root/sem3_1045/OOP/static/Debug/../variablesInClass.cpp:31: undefined reference to `GfG::i'
+/usr/bin/ld: /root/sem3_1045/OOP/static/Debug/../variablesInClass.cpp:34: undefined reference to `GfG::i'
+/usr/bin/ld: /root/sem3_1045/OOP/static/Debug/../variablesInClass.cpp:34: undefined reference to `GfG::i'
+collect2: error: ld returned 1 exit status
+make: *** [makefile:57: static] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
+
+14:40:46 Build Failed. 8 errors, 0 warnings. (took 617ms)
+

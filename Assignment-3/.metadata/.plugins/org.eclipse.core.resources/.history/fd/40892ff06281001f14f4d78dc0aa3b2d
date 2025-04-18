@@ -1,0 +1,77 @@
+/*
+ * q1.cpp
+ *
+ *  Created on: 03-Oct-2024
+ *      Author: root
+ */
+
+
+#include<iostream>
+
+#define row 3
+#define col 3
+
+using namespace std;
+
+class Matrix
+{
+	int matrix[row][col];
+public:
+	void get_input()
+	{
+		for(int i=0; i<row; i++)
+		{
+			for(int j=0; j<col; j++)
+			{
+				cout<<"Enter the value at index " <<i<<", "<<j<< " : ";
+				cin>>matrix[i][j];
+			}
+		}
+	}
+
+	void show_matrix()
+	{
+		for(int i=0; i<row; i++)
+		{
+			for(int j=0; j<col; j++)
+			{
+				cout<<matrix[i][j]<<"\t";
+			}
+			cout<<endl;
+		}
+	}
+	friend Matrix operator+ (Matrix, Matrix);
+};
+
+Matrix operator+(Matrix a, Matrix b)
+{
+	Matrix sum;
+
+	for(int i=0; i<row; i++)
+	{
+		for(int j=0; i<col; j++)
+		{
+			sum.matrix[i][j] = a.matrix[i][j] + b.matrix[i][j];
+		}
+	}
+	return sum;
+}
+
+int main()
+{
+	Matrix a, b, add;
+
+	cout<<("Matrix A\n\n");
+	a.get_input();
+	a.show_matrix();
+
+	printf("Matrix B\n\n");
+	b.get_input();
+	b.show_matrix();
+
+	cout<<("\n\nAddition of matrices\n\n");
+	add = a+b;
+	add.show_matrix();
+
+	return 0;
+}

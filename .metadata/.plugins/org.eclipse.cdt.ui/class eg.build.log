@@ -1,0 +1,15 @@
+13:10:08 **** Build of configuration Debug for project class eg ****
+make all 
+Building file: ../class.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"class.d" -MT"class.o" -o "class.o" "../class.cpp"
+Finished building: ../class.cpp
+ 
+Building target: class eg
+Invoking: GCC C++ Linker
+g++  -o "class eg"  ./class.o   
+Finished building target: class eg
+ 
+
+13:10:09 Build Finished. 0 errors, 0 warnings. (took 1s.170ms)
+

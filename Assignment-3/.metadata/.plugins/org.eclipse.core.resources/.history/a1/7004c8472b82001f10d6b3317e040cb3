@@ -1,0 +1,53 @@
+/*
+ * q4.cpp
+ *
+ *  Created on: 03-Oct-2024
+ *      Author: root
+ */
+
+
+
+#include <iostream>
+using namespace std;
+
+class CString
+{
+public:
+	string s;
+
+	void getString()
+	{
+		cout<<"Enter string : ";
+		cin>>s;
+	}
+
+	void showString()
+	{
+		cout<<s;
+	}
+	friend CString operator+(CString, CString);
+};
+
+
+CString operator+(CString a, CString b)
+{
+	CString concate;
+	concate.s = a.s+b.s;
+	return concate;
+}
+int main()
+{
+	CString str1, str2, str3;
+
+	cout<<"String 1: ";
+	str1.getString();
+
+	cout<<"String 1: ";
+	str1.getString();
+
+	str3=str1+str2;
+
+	cout<<str3.s;
+
+	return 0;
+}

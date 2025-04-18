@@ -1,0 +1,7 @@
+LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/arch=x86_64
+LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/name=Local
+LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/os=linux
+configDescList=org.eclipse.launchbar.core.descriptorType.default\:Single Inheritance,org.eclipse.launchbar.core.descriptorType.default\:area_perimeter,org.eclipse.launchbar.core.descriptorType.default\:Multilevel Inheritance
+eclipse.preferences.version=1
+org.eclipse.launchbar.core.descriptorType.default\:Single\ Inheritance/activeLaunchMode=run
+org.eclipse.launchbar.core.descriptorType.default\:Single\ Inheritance/activeLaunchTarget=org.eclipse.launchbar.core.launchTargetType.local\:Local

@@ -1,0 +1,35 @@
+/*
+ * q2.cpp
+ *
+ *  Created on: 03-Oct-2024
+ *      Author: root
+ */
+
+
+#include <iostream>
+using namespace std;
+
+class Time
+{
+	int Hour, Minute, Second;
+public:
+	void get_input()
+	{
+		printf("Enter Hour : ");
+		scanf("%d" ,&Hour);
+		printf("Enter Minutes : ");
+		scanf("%d" ,&Minute);
+		printf("Enter Second : ");
+		scanf("%d",&Second);
+	}
+
+	void show_time()
+	{
+		printf("\n%d : %d : %d\n" ,Hour, Minute, Second);
+	}
+};
+int main()
+{
+	return 0;
+}
+

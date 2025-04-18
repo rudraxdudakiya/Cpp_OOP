@@ -1,0 +1,15 @@
+14:38:51 **** Incremental Build of configuration Debug for project Multilevel Inheritance ****
+make all 
+Building file: ../multilevel.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"multilevel.d" -MT"multilevel.o" -o "multilevel.o" "../multilevel.cpp"
+Finished building: ../multilevel.cpp
+ 
+Building target: Multilevel Inheritance
+Invoking: GCC C++ Linker
+g++  -o "Multilevel Inheritance"  ./multilevel.o   
+Finished building target: Multilevel Inheritance
+ 
+
+14:38:52 Build Finished. 0 errors, 0 warnings. (took 410ms)
+

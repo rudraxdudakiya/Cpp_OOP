@@ -1,0 +1,229 @@
+/*
+ * q4.cpp
+ *
+ *  Created on: 03-Oct-2024
+ *      Author: root
+ */
+
+
+
+#include <iostream>
+using namespace std;
+
+class CString
+{
+public:
+	string s;
+
+	void getString()
+	{
+		cout<<"Enter string : ";
+		cin>>s;
+	}
+
+	void showString()
+	{
+		cout<<s<<"\n\n";
+	}
+	int getlen()
+	{
+		int len=0,i=0;
+		while(s[i] != '\0')
+		{
+			len++, i++;
+		}
+		return len;
+	}
+	friend CString operator+(CString, CString);
+	friend bool operator==(CString, CString);
+	friend bool operator!=(CString, CString);
+	friend bool operator<=(CString, CString);
+	friend bool operator>=(CString, CString);
+	friend bool operator<(CString, CString);
+	friend bool operator>(CString, CString);
+};
+
+
+CString operator+(CString a, CString b)
+{
+	CString concate;
+	concate.s = a.s+b.s;
+	return concate;
+}
+
+bool operator==(CString a, CString b)
+{
+	if(a.s == b.s)
+		return true;
+	return false;
+}
+
+bool operator!=(CString a, CString b)
+{
+	if(a.s != b.s)
+		return true;
+	return false;
+}
+bool operator<=(CString a, CString b)
+{
+	int l1=a.getlen();
+	int l2=b.getlen();
+
+	if(l1 <= l2)
+	{
+		if(l1 == l2)
+		{
+			if(a.s==b.s)
+				return true;
+			else
+			{
+				cout<<"lenth of both strings are same but strings are not same\n\n";
+				return false;
+			}
+		}
+		return true;
+	}
+	return false;
+}
+bool operator>=(CString a, CString b)
+{
+	int l1=a.getlen();
+	int l2=b.getlen();
+
+	if(l1 >= l2)
+	{
+		if(l1 == l2)
+		{
+			if(a.s==b.s)
+				return true;
+			else
+			{
+				cout<<"lenth of both strings are same but strings are not same\n\n";
+				return false;
+			}
+		}
+		return true;
+	}
+	return false;
+}
+bool operator<(CString a, CString b)
+{
+	int l1=a.getlen();
+	int l2=b.getlen();
+
+	if(l1 < l2)
+	{
+		return true;
+	}
+	return false;
+}
+bool operator>(CString a, CString b)
+{
+	int l1=a.getlen();
+	int l2=b.getlen();
+
+	if(l1 > l2)
+	{
+		return true;
+	}
+	return false;
+}
+
+int main()
+{
+	CString str1, str2, str3;
+
+	cout<<"String 1: "<<endl;
+	str1.getString();
+	str1.showString();
+
+	cout<<"String 2: "<<endl;
+	str2.getString();
+	str2.showString();
+
+	cout<<"String 3: "<<endl;
+	str3=str1+str2;
+	str3.showString();
+
+	int ch;
+	do{
+	cout<<"\t\tCheck Relational operators on CString's object\n"<<endl;
+	cout<<"\t\t1. =="<<endl;
+	cout<<"\t\t2. !="<<endl;
+	cout<<"\t\t3. >="<<endl;
+	cout<<"\t\t4. <="<<endl;
+	cout<<"\t\t5. >"<<endl;
+	cout<<"\t\t6. <"<<endl;
+	cout<<"\t\t7."<<endl;
+	cin>>ch;
+	switch(ch)
+	{
+		case 1:
+			if(str1 == str2)
+			{
+				cout<<("Both strings are same")<<endl;
+			}
+			else
+			{
+				cout<<"condition not satisfied";
+			}
+			break;
+		case 2:
+			if(str1 != str2)
+			{
+				cout<<("Both strings are different")<<endl;
+			}
+			else
+			{
+				cout<<"condition not satisfied";
+			}
+			break;
+		case 3:
+			if(str1 >= str2)
+			{
+				cout<<("strings 1 is greater or equal to string 2")<<endl;
+			}
+			else
+			{
+				cout<<"condition not satisfied";
+			}
+			break;
+		case 4:
+			if(str1 <= str2)
+			{
+				cout<<("strings 1 is less or equal to string 2")<<endl;
+			}
+			else
+			{
+				cout<<"condition not satisfied";
+			}
+			break;
+		case 5:
+			if(str1 > str2)
+			{
+				cout<<("strings 1 is greater than string 2")<<endl;
+			}
+			else
+			{
+				cout<<"condition not satisfied";
+			}
+			break;
+		case 6:
+			if(str1 < str2)
+			{
+				cout<<("strings 1 is less than string 2")<<endl;
+			}
+			else
+			{
+				cout<<"condition not satisfied";
+			}
+			break;
+		case 7:
+			cout<<"Exited.."<<endl;
+			break;
+		default:
+			cout<<"Invalid choice\n\n";
+	}
+}while(ch != 7);
+	return 0;
+}

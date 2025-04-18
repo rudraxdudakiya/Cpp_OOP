@@ -1,0 +1,43 @@
+/*
+ * q6.cpp
+ *
+ *  Created on: 02-Sep-2024
+ *      Author: root
+ */
+
+
+#include <iostream>
+#include <iomanip>
+using namespace std;
+
+int main()
+{
+    float number;
+    cout<<"Enter the number :";
+    cin>>number;
+    cout<<"Default format: " << number << endl;
+
+    int point;
+    cout<<"\nEnter the number of decimal points :";
+    cin>>point;
+    cout<<fixed << setprecision(point);
+    cout<<"\nFixed-point notation ("<<point<<" decimal places): " << number << endl;
+
+    cout<<"\nEnter the number of decimal points in scientific notation :";
+    cin>>point;
+    cout<<scientific << setprecision(point);
+    cout<<"\nScientific notation ("<<point<<" decimal places): " << number << endl;
+
+    cout.unsetf(ios::fixed| ios:: scientific);
+    cout<<"\nDefault: "<<number;
+
+    int width;
+    cout<<"\n\nEnter the width : ";
+    cin>>width;
+    cout<<"\nvalue in "<<width<<" range (start from right):"<<setw(width)<<number;
+
+    cout.unsetf(ios::fixed| ios:: scientific);
+    cout<<"\n\nDefault: "<<number;
+    return 0;
+}
+

@@ -1,0 +1,27 @@
+/*
+ * q6.cpp
+ *
+ *  Created on: 02-Sep-2024
+ *      Author: root
+ */
+
+
+
+
+#include <iostream>
+#include <iomanip>
+using namespace std;
+
+int main()
+{
+    float number = 123.456789;
+    cout << "Default format: " << number << std::endl;
+
+    cout << std::fixed << std::setprecision(2);
+    cout << "Fixed-point notation (2 decimal places): " << number << std::endl;
+
+    cout << std::scientific << std::setprecision(4);
+    cout << "Scientific notation (4 decimal places): " << number << std::endl;
+     return 0;
+}
+

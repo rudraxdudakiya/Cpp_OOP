@@ -1,0 +1,18 @@
+/*
+ * pro.cpp
+ *
+ *  Created on: 15-Oct-2024
+ *      Author: root
+ */
+
+
+
+
+#include <iotream>
+using namespace std;
+
+
+int main()
+{
+	return 0;
+}

@@ -1,0 +1,31 @@
+/*
+ * pro.cpp
+ *
+ *  Created on: 15-Oct-2024
+ *      Author: root
+ */
+
+
+
+
+#include <iostream>
+using namespace std;
+
+class student
+{
+	int rno,m1,m2,m3,total;
+	string name;
+	float per;
+public:
+	student()
+	{
+		cout << "--- Default Constructor of Student class ---";
+		rno = m1 = m2 = m3 = total = per = 0;
+		name = "";
+	}
+};
+
+int main()
+{
+	return 0;
+}

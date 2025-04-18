@@ -1,0 +1,132 @@
+/*
+ * q3.cpp
+ *
+ *  Created on: 11-Oct-2024
+ *      Author: root
+ */
+//
+//3. Design EmployeeManagementSystem.
+//a) Design appropriate classes and make use of inheritance.
+//b) Make use of constructors to initialize the members
+
+#include <iostream>
+#include <vector>
+using namespace std;
+
+class Employee
+{
+protected:
+    string name;
+    int id;
+
+public:
+    Employee(string name, int id)
+    {
+    	this->name = name;
+    	this->id = id;
+    }
+
+    virtual void displayInfo()
+    {
+        cout << "Name: " << name << ", ID: " << id <<  endl;
+    }
+};
+
+class Position : public Employee
+{
+private:
+    string pos;
+    double salary;
+
+public:
+    Position(string name, int id, string pos, double salary) : Employee(name, id)
+    {
+    	this->pos = pos;
+    	this->salary = salary;
+    }
+
+    void displayInfo()
+    {
+        Employee::displayInfo();
+
+    	cout << "Position : " << pos << endl;
+    	cout << "Salary :" << salary << endl;
+    }
+};
+
+class Intern : public Employee
+{
+private:
+    string college;
+    double stipend;
+public:
+    Intern(string name, int id, double stipend, string college) : Employee(name, id)
+    {
+    	this->college = college;
+    	this->stipend = stipend;
+    }
+
+    void displayInfo()
+    {
+        Employee::displayInfo();
+        cout << "College : " << college << endl;
+        cout << "Stipend : " << stipend << "$" << endl;
+    }
+};
+
+int main() {
+    vector<Employee*> employees;
+    int choice;
+
+    do {
+        cout << "\n\n\t\tMENU\n\n\t1. Add Employee (Position)\n\t2. Add Intern\n\t3. Display Employees\n\t4. Exit\n";
+        cout << "Enter your choice: ";
+        cin >> choice;
+
+        switch (choice) {
+            case 1: {
+                string name,pos;
+                int id;
+                double salary;
+                cout << "Enter Name: ";
+                cin >> name;
+                cout << "Enter ID: ";
+                cin >> id;
+                cout << "Enter Salary: ";
+                cin >> salary;
+                cout << "Enter Position: ";
+                cin >> pos;
+                employees.push_back(new Position(name, id ,pos ,salary));
+                break;
+            }
+            case 2: {
+                string name, school;
+                int id;
+                double salary;
+                cout << "Enter Name: ";
+                cin >> name;
+                cout << "Enter ID: ";
+                cin >> id;
+                cout << "Enter Salary: ";
+                cin >> salary;
+                cout << "Enter School: ";
+                cin >> school;
+                employees.push_back(new Intern(name, id, salary, school));
+                break;
+            }
+            case 3:
+                for (const auto& emp : employees) {
+                    emp->displayInfo();
+                    cout << endl;
+                }
+                break;
+            case 4:
+            	cout << "Exited...." << endl;
+            	break;
+            default:
+                cout << "Invalid choice. Please try again." << endl;
+        }
+    } while (choice != 4);
+
+    return 0;
+}

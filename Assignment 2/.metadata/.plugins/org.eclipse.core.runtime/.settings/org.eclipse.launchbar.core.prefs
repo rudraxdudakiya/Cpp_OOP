@@ -1,0 +1,13 @@
+LaunchTargetManager/configs/Q8_book=org.eclipse.launchbar.core.launchTargetType.local\:Local
+LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/arch=x86_64
+LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/name=Local
+LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/os=linux
+configDescList=org.eclipse.launchbar.core.descriptorType.default\:Q4_Employee,org.eclipse.launchbar.core.descriptorType.default\:Q8_book,org.eclipse.launchbar.core.descriptorType.default\:Q7_calander,org.eclipse.launchbar.core.descriptorType.default\:Q1_String_Operations,org.eclipse.launchbar.core.descriptorType.default\:Q2_1D_array_operations,org.eclipse.launchbar.core.descriptorType.default\:Q3_date_time (1),org.eclipse.launchbar.core.descriptorType.default\:Q3_date_time,org.eclipse.launchbar.core.descriptorType.default\:Q5_Student,org.eclipse.launchbar.core.descriptorType.default\:Q6
+eclipse.preferences.version=1
+org.eclipse.launchbar.core.descriptorType.default\:Q1_String_Operations/activeLaunchMode=run
+org.eclipse.launchbar.core.descriptorType.default\:Q1_String_Operations/activeLaunchTarget=org.eclipse.launchbar.core.launchTargetType.local\:Local
+org.eclipse.launchbar.core.descriptorType.default\:Q2_1D_array_operations/activeLaunchMode=run
+org.eclipse.launchbar.core.descriptorType.default\:Q2_1D_array_operations/activeLaunchTarget=org.eclipse.launchbar.core.launchTargetType.local\:Local
+org.eclipse.launchbar.core.descriptorType.default\:Q4_Employee/activeLaunchMode=run
+org.eclipse.launchbar.core.descriptorType.default\:Q8_book/activeLaunchMode=run
+org.eclipse.launchbar.core.descriptorType.default\:Q8_book/activeLaunchTarget=org.eclipse.launchbar.core.launchTargetType.local\:Local

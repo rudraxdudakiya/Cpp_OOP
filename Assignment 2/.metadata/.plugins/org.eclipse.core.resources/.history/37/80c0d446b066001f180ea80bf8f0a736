@@ -1,0 +1,273 @@
+/*
+ * q3.cpp
+ *
+ *  Created on: 23-Aug-2024
+ *      Author: root
+ */
+
+#include <iostream>
+using namespace std;
+
+class calander
+{
+private:
+	int dd,mm,yy,h,m,s;
+public:
+	calander(int dd,int mm,int yy,int h,int m,int s)
+	{
+		this->dd=dd;
+		this->mm=mm;
+		this->yy=yy;
+
+		this->h=h;
+		this->m=m;
+		this->s=s;
+	}
+//	void input();
+	void date();
+	void time();
+	void checkLeap();
+	void dateDiff();
+	void getday();
+	void getmonth();
+	void getyear();
+	void gethours();
+	void getminutes();
+	void getseconds();
+	void formatDate();
+};
+
+void calander ::date()
+{
+	cout<<"\n\t"<<dd<<"/"<<mm<<"/"<<yy<<endl;
+}
+void calander ::time()
+{
+	cout<<"\n\t"<<h<<":"<<m<<":"<<s<<endl;
+}
+void calander ::checkLeap()
+{
+	if(yy % 4 == 0)
+	{
+		cout<<"\n\t"<< yy <<" is a Leap Year\n";
+	}
+	else
+	{
+		cout<<"\n\t"<< yy <<" is not a Leap Year\n";
+	}
+}
+
+void calander ::dateDiff()
+{
+	int calculated_day=0,calculated_month=0,calculated_year=0;
+	int d,m,y;
+	cout<<"\nEnter the new date : \nDay :";
+	cin>>d;
+	cout<<"\nMonth :";
+	cin>>m;
+	cout<<"\nYear :";
+	cin>>y;
+	int month[12]={31,28,31,30,31,30,31,31,30,31,30,31};
+		if(y%4==0)
+			month[1]=29;
+		if(dd > d)
+		{
+			int i=month[mm-1];
+			d=d+i;
+			m=m-1;
+		}
+		if(mm > m)
+		{
+			y=y-1;
+			m=m+12;
+		}
+		calculated_day=d-dd;
+		calculated_month=m-mm;
+		calculated_year=y-yy;
+
+		cout<<"year : " <<calculated_year<<" month : "<<calculated_month<<" day :"<<calculated_day;
+}
+void calander ::getday()
+{
+	cout<<"Day : "<<dd;
+}
+void calander ::getmonth()
+{
+	cout<<"Month : "<<mm;
+}
+
+void calander ::getyear()
+{
+	cout<<"Year : "<<yy;
+}
+
+void calander ::gethours()
+{
+	cout<<"Hour : "<<h;
+}
+
+void calander ::getminutes()
+{
+	cout<<"Minutes : "<<m;
+}
+
+void calander ::getseconds()
+{
+	cout<<"Seconds : "<<s;
+}
+void calander ::formatDate()
+{
+	cout<<"DD-MM-YY :"<<dd<<"-"<<mm<<"-"<<yy<<endl;
+	if(dd<10 && mm<10)
+	{
+		cout<<"Formated date : 0"<<dd<<"-0"<<mm<<"-"<<yy<<endl;
+	}
+	if(dd<10)
+	{
+		cout<<"Formated date : 0"<<dd<<mm<<"-"<<yy<<endl;
+	}
+	if(mm<10)
+	{
+		cout<<"Formated date : "<<dd<<"-0"<<mm<<"-"<<yy<<endl;
+	}
+}
+int validtime(int h,int m,int s)
+{
+	if((h>=0 && h<=24) && (m>=0 && m<=59) && (s>=0 && s<=59))
+	{
+		return 1;
+	}
+	return 0;
+}
+int validate(int dd,int mm,int yy,int h,int m,int s)
+{
+	if(yy >= 1000 && yy <= 9999)
+	{
+		if(mm >= 1 && mm <= 12)
+		{
+			if((mm==1 || mm==3 || mm==5 || mm==7 || mm==8 || mm==10 || mm==12) && (dd > 0 && dd <= 31))
+			{
+				if(validtime(h, m, s))
+					return 1;
+			}
+			else if((mm==4 || mm==6 || mm==9 || mm==11) && (dd > 0 && dd <= 30))
+			{
+				if(validtime(h, m, s))
+					return 1;
+			}
+            else if(mm==2)
+            {
+                if((yy%4==0) && (dd>0&&dd<=29))
+                {
+                    return 1;
+                }
+                else if(dd>0 &&  dd<=28)
+                {
+                    return 1;
+                }
+            }
+		}
+	}
+	cout<<"\n\tEntered Date Or time is invalid.\n";
+	return 0;
+}
+
+
+int main()
+{
+	int ch;
+
+	int dd,mm,yy,h,m,s;
+	do
+	{
+	input_date:
+	cout<<"Enter valid date in  DD-MM-YY format : ";
+	cout<<"\nDD : ";
+	cin>>dd;
+	cout<<"MM : ";
+	cin>>mm;
+	cout<<"YY : ";
+	cin>>yy;
+
+	input_time:
+	cout<<"\nEnter the time in hour-minutes-second format : ";
+	cout<<"\nhour : ";
+	cin>>h;
+	cout<<"minutes : ";
+	cin>>m;
+	cout<<"seconds : ";
+	cin>>s;
+	}
+	while(!validate(dd,mm,yy,h,m,s));
+
+	calander Date_Time(dd,mm,yy,h,m,s);
+	do {
+		cout<<"\n\t\tDate and Time\n\n";
+		cout<<"\t1. Date.\n";
+		cout<<"\t2. Time.\n";
+		cout<<"\t3  Format Date.\n";
+		cout<<"\t4. Difference between 2 dates.\n";
+		cout<<"\t5. Check Leap year.\n";
+		cout<<"\t6. Retrieve Day.\n";
+		cout<<"\t7. Retrieve month.\n";
+		cout<<"\t8. Retrieve year.\n";
+		cout<<"\t9. Retrieve hour.\n";
+		cout<<"\t10.Retrieve minutes.\n";
+		cout<<"\t11.Retrieve seconds.\n";
+		cout<<"\t12.Exit. \nEnter your choice :"<<endl;
+		cin>>ch;
+		int flag=0;
+		switch(ch)
+		{
+			case 1:
+				Date_Time.date();
+				cout<<"Want to change date (0,1):";
+				cin>>flag;
+				if(flag)
+					goto input_date;
+				break;
+			case 2:
+				Date_Time.time();
+				cout<<"Want to change time (0,1):";
+				cin>>flag;
+				if(flag)
+					goto input_time;
+				break;
+			case 3:
+				Date_Time.formatDate();
+				break;
+			case 4:
+				Date_Time.dateDiff();
+				break;
+			case 5:
+				Date_Time.checkLeap();
+				break;
+			case 6:
+				Date_Time.getday();
+				break;
+			case 7:
+				Date_Time.getmonth();
+				break;
+			case 8:
+				Date_Time.getyear();
+				break;
+			case 9:
+				Date_Time.gethours();
+				break;
+			case 10:
+				Date_Time.getminutes();
+				break;
+			case 11:
+				Date_Time.getseconds();
+				break;
+			case 12:
+				cout<<"\n\tThank You !\n";
+				break;
+			default:
+				cout<<"\n\tInvalid choice.\n";
+		}
+	}while(ch != 12);
+	return 0;
+}
+
+

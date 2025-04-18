@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;static/variable.cpp&apos; to &apos;variableInFun.cpp&apos;" description="Rename resource &apos;variable.cpp&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="variable.cpp" name="variableInFun.cpp" stamp="1720775423632" updateReferences="true"/>
+</session>

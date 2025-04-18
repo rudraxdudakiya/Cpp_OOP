@@ -1,0 +1,1 @@
+variableInFun.o: ../variableInFun.cpp

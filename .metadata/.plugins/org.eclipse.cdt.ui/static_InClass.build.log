@@ -1,0 +1,20 @@
+13:10:07 **** Incremental Build of configuration Debug for project static_InClass ****
+make all 
+Building file: ../staticInClass.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"staticInClass.d" -MT"staticInClass.o" -o "staticInClass.o" "../staticInClass.cpp"
+Finished building: ../staticInClass.cpp
+ 
+Building target: static_InClass
+Invoking: GCC C++ Linker
+g++  -o "static_InClass"  ./staticInClass.o   
+/usr/bin/ld: ./staticInClass.o: in function `main':
+/root/sem3_1045/OOP/static_InClass/Debug/../staticInClass.cpp:31: undefined reference to `GfG::i'
+/usr/bin/ld: /root/sem3_1045/OOP/static_InClass/Debug/../staticInClass.cpp:34: undefined reference to `GfG::i'
+/usr/bin/ld: /root/sem3_1045/OOP/static_InClass/Debug/../staticInClass.cpp:34: undefined reference to `GfG::i'
+collect2: error: ld returned 1 exit status
+make: *** [makefile:57: static_InClass] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
+
+13:10:09 Build Failed. 5 errors, 0 warnings. (took 1s.850ms)
+

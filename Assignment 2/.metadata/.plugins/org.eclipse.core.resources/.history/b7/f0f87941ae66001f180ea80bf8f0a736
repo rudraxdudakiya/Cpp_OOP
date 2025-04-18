@@ -1,0 +1,158 @@
+/*
+ * q7.cpp
+ *
+ *  Created on: 30-Aug-2024
+ *      Author: root
+ */
+
+
+
+#include <iostream>
+using namespace std;
+
+class calander
+{
+private:
+	int dd,mm,yy;
+public:
+	calander(int dd,int mm,int yy)
+	{
+		this->dd=dd;
+		this->mm=mm;
+		this->yy=yy;
+	}
+//	void input();
+	void date();
+	void checkLeap();
+	void formatDate();
+	int validate(int dd,int mm,int yy)
+	{
+		if(yy >= 1000 && yy <= 9999)
+		{
+			if(mm >= 1 && mm <= 12)
+			{
+				if((mm==1 || mm==3 || mm==5 || mm==7 || mm==8 || mm==10 || mm==12) && (dd > 0 && dd <= 31))
+				{
+						return 1;
+				}
+				else if((mm==4 || mm==6 || mm==9 || mm==11) && (dd > 0 && dd <= 30))
+				{
+						return 1;
+				}
+				else if((mm == 2) && (dd > 0 && dd <= 29))
+				{
+					if((dd == 29) && (yy % 4 == 0))
+					{
+							return 1;
+					}
+						return 1;
+				}
+			}
+		}
+		cout<<"\n\tEntered Date Or time is invalid.\n";
+		return 0;
+	}
+
+};
+
+void calander ::date()
+{
+	cout<<"\n\t"<<dd<<"/"<<mm<<"/"<<yy<<endl;
+}
+
+void calander ::checkLeap()
+{
+	if(yy % 4 == 0)
+	{
+		cout<<"\n\t"<< yy <<" is a Leap Year\n";
+	}
+	else
+	{
+		cout<<"\n\t"<< yy <<" is not a Leap Year\n";
+	}
+}
+
+
+void calander ::formatDate()
+{
+	cout<<"DD-MM-YY :"<<dd<<"-"<<mm<<"-"<<yy<<endl;
+	if(dd<10 && mm<10)
+	{
+		cout<<"Formated date : 0"<<dd<<"-0"<<mm<<"-"<<yy<<endl;
+	}
+	if(dd<10)
+	{
+		cout<<"Formated date : 0"<<dd<<mm<<"-"<<yy<<endl;
+	}
+	if(mm<10)
+	{
+		cout<<"Formated date : "<<dd<<"-0"<<mm<<"-"<<yy<<endl;
+	}
+}
+
+
+
+int main()
+{
+	int ch;
+
+	int dd,mm,yy;
+
+	input_date:
+	cout<<"Enter valid date in  DD-MM-YY format : ";
+	cout<<"\nDD : ";
+	cin>>dd;
+	cout<<"MM : ";
+	cin>>mm;
+	cout<<"YY : ";
+	cin>>yy;
+
+
+	calander Date_Time(dd,mm,yy);
+	do {
+		cout<<"\n\t\tDate\n\n";
+		cout<<"\t1. Date.\n";
+		cout<<"\t2. Format Date.\n";
+		cout<<"\t3. Validate\n";
+		cout<<"\t4. Check Leap year.\n";
+		cout<<"\t6.Exit. \nEnter your choice :"<<endl;
+		cin>>ch;
+		int flag=0;
+		switch(ch)
+		{
+			case 1:
+				Date_Time.date();
+				cout<<"Want to change date (0,1):";
+				cin>>flag;
+				if(flag)
+					goto input_date;
+				break;
+			case 2:
+				Date_Time.formatDate();
+				break;
+			case 4:
+				if(Date_Time.validate(dd,mm,yy))
+				{
+					cout<<"\nValid date\n";
+				}
+				else
+				{
+					cout<<"\nInvalid date\n";
+				}
+				break;
+			case 5:
+				Date_Time.checkLeap();
+				break;
+			case 12:
+				cout<<"\n\tThank You !\n";
+				break;
+			default:
+				cout<<"\n\tInvalid choice.\n";
+		}
+	}while(ch != 12);
+	return 0;
+}
+
+
+
+

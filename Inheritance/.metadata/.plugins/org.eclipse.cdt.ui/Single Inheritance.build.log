@@ -1,0 +1,15 @@
+14:45:02 **** Incremental Build of configuration Debug for project Single Inheritance ****
+make all 
+Building file: ../singleInheritance.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"singleInheritance.d" -MT"singleInheritance.o" -o "singleInheritance.o" "../singleInheritance.cpp"
+Finished building: ../singleInheritance.cpp
+ 
+Building target: Single Inheritance
+Invoking: GCC C++ Linker
+g++  -o "Single Inheritance"  ./singleInheritance.o   
+Finished building target: Single Inheritance
+ 
+
+14:45:03 Build Finished. 0 errors, 0 warnings. (took 518ms)
+

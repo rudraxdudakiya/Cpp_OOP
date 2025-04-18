@@ -1,0 +1,30 @@
+14:14:56 **** Incremental Build of configuration Debug for project Project ****
+make all 
+Building file: ../pro.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"pro.d" -MT"pro.o" -o "pro.o" "../pro.cpp"
+Finished building: ../pro.cpp
+ 
+Building target: Project
+Invoking: GCC C++ Linker
+g++  -o "Project"  ./pro.o   
+Finished building target: Project
+ 
+14:15:05 **** Incremental Build of configuration Debug for project Project ****
+make all 
+make: Nothing to be done for 'all'.
+14:18:10 **** Incremental Build of configuration Debug for project Project ****
+make all 
+Building file: ../pro.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"pro.d" -MT"pro.o" -o "pro.o" "../pro.cpp"
+Finished building: ../pro.cpp
+ 
+Building target: Project
+Invoking: GCC C++ Linker
+g++  -o "Project"  ./pro.o   
+Finished building target: Project
+ 
+14:34:44 **** Incremental Build of configuration Debug for project Project ****
+make all 
+make: Nothing to be done for 'all'.

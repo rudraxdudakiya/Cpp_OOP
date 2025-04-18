@@ -1,0 +1,15 @@
+14:45:00 **** Incremental Build of configuration Debug for project static_InFun ****
+make all 
+Building file: ../variableInFun.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"variableInFun.d" -MT"variableInFun.o" -o "variableInFun.o" "../variableInFun.cpp"
+Finished building: ../variableInFun.cpp
+ 
+Building target: static_InFun
+Invoking: GCC C++ Linker
+g++  -o "static_InFun"  ./variableInFun.o   
+Finished building target: static_InFun
+ 
+
+14:45:01 Build Finished. 0 errors, 0 warnings. (took 421ms)
+

@@ -1,0 +1,22 @@
+/*
+ * q3.cpp
+ *
+ *  Created on: 03-Oct-2024
+ *      Author: root
+ */
+
+
+
+
+#include <iostream>
+using namespace std;
+
+class word
+{
+	string s;
+public:
+	void get_input()
+	{
+
+	}
+};

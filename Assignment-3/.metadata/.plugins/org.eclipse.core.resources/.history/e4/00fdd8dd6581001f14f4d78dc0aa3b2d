@@ -1,0 +1,43 @@
+/*
+ * q2.cpp
+ *
+ *  Created on: 03-Oct-2024
+ *      Author: root
+ */
+
+
+
+#include <iostream>
+using namespace std;
+
+class Time
+{
+    int Hour, Minute, Second;
+public:
+    friend istream& operator>>(istream &input)
+    {
+        cout << "Enter Hour: ";
+        in >> Hour;
+        cout << "Enter Minutes: ";
+        in >> Minute;
+        cout << "Enter Seconds: ";
+        in >> Second;
+        return in;
+    }
+
+    friend ostream& operator<<(ostream &out)
+    {
+        out << Hour << ":" << Minute << ":" << Second;
+        return out;
+    }
+};
+
+
+int main()
+{
+    Time a;
+    cin >> a;  // Using overloaded >> operator
+    cout << a; // Using overloaded << operator
+
+    return 0;
+}

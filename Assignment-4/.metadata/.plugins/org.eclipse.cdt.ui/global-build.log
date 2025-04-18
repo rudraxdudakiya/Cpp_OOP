@@ -1,0 +1,27 @@
+13:32:51 **** Incremental Build of configuration Debug for project Q2 ****
+make all 
+make: Nothing to be done for 'all'.
+13:37:35 **** Incremental Build of configuration Debug for project Q4 ****
+make all 
+Building file: ../q4.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"q4.d" -MT"q4.o" -o "q4.o" "../q4.cpp"
+Finished building: ../q4.cpp
+ 
+Building target: Q4
+Invoking: GCC C++ Linker
+g++  -o "Q4"  ./q4.o   
+Finished building target: Q4
+ 
+13:37:57 **** Incremental Build of configuration Debug for project Q4 ****
+make all 
+Building file: ../q4.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"q4.d" -MT"q4.o" -o "q4.o" "../q4.cpp"
+Finished building: ../q4.cpp
+ 
+Building target: Q4
+Invoking: GCC C++ Linker
+g++  -o "Q4"  ./q4.o   
+Finished building target: Q4
+ 
